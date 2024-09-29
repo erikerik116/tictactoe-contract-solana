@@ -1,7 +1,6 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
 import { expect, assert } from "chai";
-
 import { TicTacToe } from "../target/types/tic_tac_toe";
 
 async function play(program: Program<TicTacToe>, game, player, tile, expectedTurn, expectedGameState, expectedBoard) {
