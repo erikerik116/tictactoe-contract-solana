@@ -129,14 +129,12 @@ impl Game {
 
     fn update_state(&mut self) {
         for i in 0..=2 {
-            // three of the same in one row
             if self.is_winning_trio([(i, 0), (i, 1), (i, 2)]) {
                 self.state = GameState::Won {
                     winner: self.current_player(),
                 };
                 return;
             }
-            // three of the same in one column
             if self.is_winning_trio([(0, i), (1, i), (2, i)]) {
                 self.state = GameState::Won {
                     winner: self.current_player(),
@@ -145,7 +143,6 @@ impl Game {
             }
         }
 
-        // three of the same in one diagonal
         if self.is_winning_trio([(0, 0), (1, 1), (2, 2)])
             || self.is_winning_trio([(0, 2), (1, 1), (2, 0)])
         {
@@ -155,8 +152,6 @@ impl Game {
             return;
         }
 
-        // reaching this code means the game has not been won,
-        // so if there are unfilled tiles left, it's still active
         for row in 0..=2 {
             for column in 0..=2 {
                 if self.board[row][column].is_none() {
@@ -165,9 +160,6 @@ impl Game {
             }
         }
 
-        // game has not been won
-        // game has no more free tiles
-        // -> game ends in a tie
         self.state = GameState::Tie;
     }
 }
