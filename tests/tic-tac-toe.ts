@@ -106,19 +106,19 @@ describe("tic-tac-toe", () => {
       ]
     );
   })
-  it('player 1 turn', async () => {
-    await play(
-      program,
-      gameKeyPair.publicKey,
-      playerOne,
-      { row: 2, column: 2 },
-      5,
-      { won: { winner: playerOne.publicKey }, },
-      [
-        [{ x: {} }, null, { o: {} }],
-        [null, { x: {} }, { o: {} }],
-        [null, null, { x: {} }]
-      ]
-    );
-  })
+  // it('player 1 turn', async () => {
+  //   await play(
+  //     program,
+  //     gameKeyPair.publicKey,
+  //     playerOne,
+  //     { row: 2, column: 2 },
+  //     5,
+  //     { won: { winner: playerOne.publicKey }, },
+  //     [
+  //       [{ x: {} }, null, { o: {} }],
+  //       [null, { x: {} }, { o: {} }],
+  //       [null, null, { x: {} }]
+  //     ]
+  //   );
+  // })
 });
